@@ -36,7 +36,7 @@ public class ProductServiceImpl implements ProductService {
         existing.setDiscount(product.getDiscount()); // ✅ added discount update
         existing.setCategory(product.getCategory());
         existing.setSubCategory(product.getSubCategory());
-        existing.setPictureUrl(product.getPictureUrl());
+        existing.setImage_url(product.getImage_url());
         existing.setUpdatedByCode(product.getUpdatedByCode());
         existing.setUpdatedByName(product.getUpdatedByName());
 

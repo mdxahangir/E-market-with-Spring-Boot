@@ -32,7 +32,6 @@ public class Product {
     @Column(nullable = false)
     private Integer stock;
 
-    // ✅ Discount percentage (e.g., 10 for 10%)
     @Column(nullable = false)
     private Integer discount;
 
@@ -44,11 +43,9 @@ public class Product {
     @JoinColumn(name = "sub_category_id")
     private SubCategory subCategory;
 
-    // ✅ Picture URL Column
-    @Column(name = "picture_url", length = 300)
-    private String pictureUrl;
+    @Column(name = "image_url", length = 300)
+    private String image_url;
 
-    // ✅ Audit Fields
     @Column(name = "created_by_code", length = 50, updatable = false)
     private String createdByCode;
 
