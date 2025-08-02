@@ -17,21 +17,22 @@ public class Rating {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Rating value (e.g., 1 to 5)
     @Column(nullable = false)
     private int rating;
 
-    // Optional text review
     private String review;
 
-    // ID of the user who submitted the rating
-    private Long userId;
+    // ✅ Many ratings belong to one product
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "userId", nullable = false)
+    private User user;
 
-    // ID of the product being rated
-    private Long productId;
+    // ✅ Many ratings belong to one product
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "product_id", nullable = false)
+    private Product product;
 
     private LocalDateTime createdAt;
-
     private LocalDateTime updatedAt;
 
     @PrePersist

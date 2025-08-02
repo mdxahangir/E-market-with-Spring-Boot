@@ -33,13 +33,13 @@ public class RatingServiceImpl implements RatingService {
     @Override
     public Rating updateRating(Long id, Rating rating) {
         return ratingRepository.findById(id)
-            .map(existing -> {
-                existing.setRating(rating.getRating());
-                existing.setReview(rating.getReview());
-                existing.setUserId(rating.getUserId());
-                existing.setProductId(rating.getProductId());
-                return ratingRepository.save(existing);
-            }).orElseThrow(() -> new RuntimeException("Rating not found"));
+                .map(existing -> {
+                    existing.setRating(rating.getRating());
+                    existing.setReview(rating.getReview());
+                    existing.setUser(rating.getUser());
+                    existing.setProduct(rating.getProduct());
+                    return ratingRepository.save(existing);
+                }).orElseThrow(() -> new RuntimeException("Rating not found"));
     }
 
     @Override
