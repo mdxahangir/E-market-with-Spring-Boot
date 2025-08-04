@@ -44,12 +44,12 @@ public class Product {
     @JoinColumn(name = "category_id")
     private Category category;
 
-    @Column(name = "image_url", length = 300)
+    @Column(name = "image_url")
     private String image_url;
 
     // ✅ One product can have many ratings
-    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Rating> ratings;
+//    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+//    private List<Rating> ratings;
 
     @Column(name = "created_by_code", length = 50, updatable = false)
     private String createdByCode;

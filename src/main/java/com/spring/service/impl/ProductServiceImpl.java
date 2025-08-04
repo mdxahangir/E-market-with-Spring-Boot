@@ -100,7 +100,7 @@ public class ProductServiceImpl implements ProductService {
         existing.setCategory(product.getCategory());
         existing.setSubCategory(product.getSubCategory());
         existing.setImage_url(product.getImage_url());
-        existing.setRatings(product.getRatings()); // ✅ Set ratings list
+       // existing.setRatings(product.getRatings()); // ✅ Set ratings list
         existing.setUpdatedByCode(product.getUpdatedByCode());
         existing.setUpdatedByName(product.getUpdatedByName());
 
