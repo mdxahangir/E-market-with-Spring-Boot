@@ -33,7 +33,7 @@ public class ShippingMethod {
     @Column(nullable = false)
     private Integer estimatedDeliveryDays; // e.g., 3, 5
 
-    @Column(nullable = false)
-    private Boolean isActive; // enable/disable for frontend
+//    @Column(nullable = false)
+//    private Boolean isActive; // enable/disable for frontend
 
 }
