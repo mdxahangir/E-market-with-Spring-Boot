@@ -47,6 +47,7 @@ public class UserAddress {
     @Column(nullable = false)
     private AddressType addressType; // SHIPPING, BILLING
 
-    @Column(nullable = false)
-    private Boolean isDefault;
+    @Column(name = "is_default", nullable = false)
+    private Boolean isDefault = false; // default value set
+
 }
