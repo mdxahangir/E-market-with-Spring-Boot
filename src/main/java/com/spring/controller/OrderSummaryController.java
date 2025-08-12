@@ -18,7 +18,7 @@ public class OrderSummaryController {
 
     @PostMapping
     public ResponseEntity<OrderSummary> createOrder(@RequestBody OrderSummary orderSummary) {
-        if (orderSummary.getGrandTotal() == null) {
+        if (orderSummary.getGrandTotal() == null || orderSummary.getStatus() == null || orderSummary.getMethod() == null) {
             return ResponseEntity.badRequest().build();
         }
         return ResponseEntity.ok(orderSummaryService.saveOrderSummary(orderSummary));

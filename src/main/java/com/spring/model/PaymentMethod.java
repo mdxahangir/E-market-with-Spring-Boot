@@ -3,5 +3,6 @@ public enum PaymentMethod {
     CASH,
     CARD,
     BANK_TRANSFER,
-    ONLINE
+    ONLINE,
+    CASH_ON_DELIVERY
 }

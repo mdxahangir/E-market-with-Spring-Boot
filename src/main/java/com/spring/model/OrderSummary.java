@@ -39,6 +39,14 @@ public class OrderSummary {
 
     @Column(name = "order_date", nullable = false)
     private LocalDateTime orderDate;
+    
+  @Enumerated(EnumType.STRING)
+  @Column(nullable = false)
+  private PaymentStatus status;
+
+  @Enumerated(EnumType.STRING)
+  @Column(nullable = false)
+  private PaymentMethod method;
 
     @PrePersist
     public void prePersist() {

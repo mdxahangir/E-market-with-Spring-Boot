@@ -14,6 +14,13 @@ import java.time.LocalDateTime;
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
+    
+    //new
+    @Override
+    public long getTotalUsers() {
+        return userRepository.count();
+    }
+
 
     @Override
     public UserResponse register(UserRegisterRequest request) {

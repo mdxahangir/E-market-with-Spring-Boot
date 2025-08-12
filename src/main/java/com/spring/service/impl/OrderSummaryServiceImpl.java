@@ -1,4 +1,3 @@
-
 package com.spring.service.impl;
 
 import com.spring.model.OrderSummary;
@@ -44,6 +43,8 @@ public class OrderSummaryServiceImpl implements OrderSummaryService {
             existing.setName(updatedOrderSummary.getName());
             existing.setQuantity(updatedOrderSummary.getQuantity());
             existing.setGrandTotal(updatedOrderSummary.getGrandTotal());
+            existing.setStatus(updatedOrderSummary.getStatus());
+            existing.setMethod(updatedOrderSummary.getMethod());
             existing.setOrderDate(updatedOrderSummary.getOrderDate() != null
                     ? updatedOrderSummary.getOrderDate()
                     : existing.getOrderDate());

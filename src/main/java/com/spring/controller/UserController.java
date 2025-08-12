@@ -22,4 +22,12 @@ public class UserController {
     public ResponseEntity<UserResponse> login(@RequestBody UserLoginRequest request) {
         return ResponseEntity.ok(userService.login(request));
     }
+    
+    
+    
+    @GetMapping("/count")
+    public ResponseEntity<Long> getTotalUsers() {
+        return ResponseEntity.ok(userService.getTotalUsers());
+    }
+
 }
