@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @CrossOrigin("*")
@@ -15,6 +16,18 @@ public class OrderSummaryController {
 
     @Autowired
     private OrderSummaryService orderSummaryService;
+    
+    @GetMapping("/revenue")
+    public ResponseEntity<BigDecimal> getTotalRevenue() {
+        return ResponseEntity.ok(orderSummaryService.getTotalRevenue());
+    }
+
+    
+    @GetMapping("/count")
+    public ResponseEntity<Long> getTotalOrders() {
+        return ResponseEntity.ok(orderSummaryService.getTotalOrders());
+    }
+
 
     @PostMapping
     public ResponseEntity<OrderSummary> createOrder(@RequestBody OrderSummary orderSummary) {
